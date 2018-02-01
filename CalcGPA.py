@@ -12,7 +12,6 @@ from bs4 import BeautifulSoup
 from pyfiglet import Figlet
 import urllib.request
 import xlsxwriter
-import requests
 import time
 import sys
 import os
@@ -36,15 +35,40 @@ banner = Figlet(font='slant')
 print("\n")
 print (banner.renderText('CGPA CALC'))
 print ("\t  >>>>>>> VIT CGPA Calculator <<<<<<<")
-print ("\t  >>>>>>  Author : ConanKapoor <<<<<<\n")
-print (">>> Login into your account and run this script coz I'm <<<\n>>> not gonna do image processing shit to fill captcha  <<<\n>>> for your sorry ass.\t\t\t\t\t<<<\n")
-print(">>> Go to Academic History and save the webpage into\t<<<\n>>> this project folder.\t\t\t\t<<<")
+print ("\t  >>>>>>  Author : ConanKapoor <<<<<<")
+print ("\t  >>>>>> API by : sridharswain <<<<<<\n")
+
+print (">>> Now I have to do image processing shit to fill  <<<\n>>> captcha so your sorry ass don't have to log in. <<<\n>>>\t\t\t\t    - Sridhar Swain <<<")
+
 print ("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
 print ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
 
 # try:
-fileName = input(">>> Please enter the name of file without .html : ")
-fileName = fileName + '.html'
+Username = input(">>> Please feed your Registration No : ")
+Password = input(">>> Please feed your Password        : ")
+url ="https://vitgrades.herokuapp.com/grades?userName=" + Username + "&password=" + Password
+
+print ("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
+print ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
+
+print(">>> Request sent to server.")
+time.sleep(1)
+print(">>> Done!!!\n")
+print(">>> Cracking Captcha.")
+time.sleep(1)
+print(">>> Done!!!\n")
+print(">>> Receiving data from server. This will take time.")
+
+# Collecting html content.
+request = urllib.request.Request(url)
+response = urllib.request.urlopen(request)
+
+# Using BeautifulSoup to parse html object response.
+soup = BeautifulSoup(response.read(),"lxml")
+infoTable = soup.find("table",{"height": "58"})
+infoStudent = infoTable.find_all("td",{"bgcolor":"#EDEADE"})
+print(infoTable)
+
 
 
 # except Exception:
