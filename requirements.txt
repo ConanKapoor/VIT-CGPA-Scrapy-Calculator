@@ -1,0 +1,4 @@
+pyfiglet
+xlsxwriter
+bs4
+requests

@@ -1,0 +1,1583 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1251">
+<title></title>
+<meta http-equiv="PRAGMA" content="NO-CACHE">
+<style>
+td {
+	font: normal 12px Tahoma, Arial;
+	color: #000000;
+}
+
+a {
+
+font: normal 12px Tahoma, Arial;
+color: #663300;
+text-decoration: none;
+}
+
+a:hover {
+
+font: normal 12px Tahoma, Arial;
+color: #fb651f;
+text-decoration: none;
+}
+
+a.white-link-underline {	
+	text-decoration: underline;
+	color: #FFFFFF;
+}
+
+.textbox {
+border-left : 1px solid #b6b6b6; 
+border-right : 1px solid #b6b6b6; 
+border-top : 1px solid #b6b6b6; 
+border-bottom : 1px solid #b6b6b6; 
+background-color : #ffffff; 
+font-size : 10px;
+font-family : Verdana, Arial, Helvetica, sans-serif; 
+color : #000; 
+text-transform : none;
+}
+
+.textbox4 {
+border-left : 0px solid #ffffff; 
+border-right : 0px solid #ffffff; 
+border-top : 0px solid #ffffff; 
+border-bottom : 0px solid #ffffff; 
+background-color : #FFFFFF; 
+font-size : 10px;
+font-family : Verdana, Arial, Helvetica, sans-serif; 
+color : #000; 
+text-transform : none;
+}
+
+.textbox2 {
+border-left : 1px solid #b6b6b6; 
+border-right : 1px solid #b6b6b6; 
+border-top : 1px solid #b6b6b6; 
+border-bottom : 1px solid #b6b6b6; 
+background-color : #ffffff; 
+font-size : 10px;
+font-family : Verdana, Arial, Helvetica, sans-serif; 
+color : #000; 
+text-transform : uppercase;
+}
+
+.submit {
+border-left : 1px solid #b6b6b6; 
+border-right : 1px solid #b6b6b6; 
+border-top : 1px solid #b6b6b6; 
+border-bottom : 1px solid #b6b6b6; 
+background-color : #ffffff; 
+font-size : 10px;
+font-weight : bold;
+font-family : Verdana, Arial, Helvetica, sans-serif; 
+color : #000; 
+text-transform : none;
+}
+
+.submit2 {
+border-left : 1px solid #b6b6b6; 
+border-right : 1px solid #b6b6b6; 
+border-top : 1px solid #b6b6b6; 
+border-bottom : 1px solid #b6b6b6; 
+background-color : #996600; 
+font-size : 10px;
+font-weight : bold;
+font-family : Verdana, Arial, Helvetica, sans-serif; 
+color : #ffffff; 
+text-transform : none;
+}
+
+.submit3 {
+border-left : 1px solid #b6b6b6; 
+border-right : 1px solid #b6b6b6; 
+border-top : 1px solid #b6b6b6; 
+border-bottom : 1px solid #b6b6b6; 
+background-color : #EDEADE; 
+font-size : 10px;
+font-weight : bold;
+font-family : Verdana, Arial, Helvetica, sans-serif; 
+color : blue; 
+text-transform : none;
+}
+
+.submit4 {
+border-left : 1px solid #b6b6b6; 
+border-right : 1px solid #b6b6b6; 
+border-top : 1px solid #b6b6b6; 
+border-bottom : 1px solid #b6b6b6; 
+background-color : #EDEADE; 
+font-size : 10px;
+font-weight : bold;
+font-family : Verdana, Arial, Helvetica, sans-serif; 
+color : blue;
+width : 230px;
+text-transform : none;
+}
+
+.submit5 {
+border-left : 1px solid #b6b6b6; 
+border-right : 1px solid #b6b6b6; 
+border-top : 1px solid #b6b6b6; 
+border-bottom : 1px solid #b6b6b6; 
+background-color : #FFFFFF; 
+font-size : 10px;
+font-weight : bold;
+font-family : Verdana, Arial, Helvetica, sans-serif; 
+color : blue;
+text-transform : none;
+}
+
+fieldset { 
+padding: 2em;
+border:1px solid #FF9900 
+width: 75%
+}
+
+legend {
+  padding: 0.2em 0.5em;
+  border:1px solid #FF9900;
+  color: #000000;
+  font-size:90%;
+  text-align:right;
+  }
+  
+label {
+  float:left;
+  width:25%;
+  margin-right:0.5em;
+  padding-top:0.2em;
+  text-align:right;
+  font-weight:bold;
+  }
+  
+.radio {
+border-left : 1px solid #b6b6b6; 
+border-right : 1px solid #b6b6b6; 
+border-top : 1px solid #b6b6b6; 
+border-bottom : 1px solid #b6b6b6; 
+background-color : #EDEADE; 
+font-size : 10px;
+font-family : Verdana, Arial, Helvetica, sans-serif; 
+color : #000; 
+text-transform : none;
+}
+</style>
+
+
+<script src="student_history_data/validate2.js" type="text/javascript"></script>
+<script language="javascript">
+
+function call_search()
+{
+	var d = document.student_history;
+	
+	if ((d.regno.value.length<1) || (d.regno.value.charAt(0)==" ")) 
+	{
+		alert("Enter Register No.");
+		d.regno.select();
+		d.regno.focus();
+		return false;
+	}
+	else
+	{
+		var val = d.regno.value;
+		self.location = "student_history.asp?rno="+ val;
+	}
+	return true;
+}
+
+function call_reset()
+{
+	self.location = "student_history.asp";
+}
+
+function call_print()
+{
+	//var d = document.student_history;
+	var val = '';
+	self.location = "student_history.asp?rno="+ val + "&print=Y";
+}
+
+
+</script>
+
+</head>
+
+
+
+<body><table cellspacing="0" cellpadding="0" border="0" width="750" height="350" align="center">
+  <tbody><tr>
+		<td bgcolor="#FFFFFF" valign="top" width="10">&nbsp;
+			
+		</td>
+		<td bgcolor="#FFFFFF" valign="top" width="740">
+		
+			<br><center>
+			<font color="#5f6a89" size="2"><b><u>STUDENT ACADEMIC HISTORY</u><br><br>
+			</b></font></center><font color="#5f6a89" size="2"><b>
+			</b></font><b><p align="right"><font color="#5f6a89" size="2"><b>Date &amp; Time : 01/02/2018 17:41:13</b></font></p>
+
+	<center><input class="submit3" value="Download as .doc" onclick="call_print();" type="button"></center>
+		
+
+			<font color="#5f6a89" size="2"><b><u>General:</u></b></font><br><br>			
+			<table style="border-collapse: collapse;" cellspacing="0" cellpadding="2" bordercolor="black" border="1" width="720" height="58">				
+			<tbody><tr>
+				<td bgcolor="#5A768D" width="73" height="27"><font color="white"><b>Reg. No.</b></font></td>
+				<td bgcolor="#EDEADE" width="260" height="27">15BCE1339</td>
+				<td bgcolor="#5A768D" width="61" height="27"><font color="white"><b>Name</b></font></td>
+				<td bgcolor="#EDEADE" width="338" height="27">SHIVAM KAPOOR</td>
+			</tr>
+			<tr>
+				<td bgcolor="#5A768D" width="73" height="29"><font color="white"><b>Program</b></font></td>
+				<td bgcolor="#EDEADE" width="260" height="29">B.Tech. Computer Science and Engineering</td>
+				<td bgcolor="#5A768D" width="61" height="29"><font color="white"><b>School</b></font></td>
+				<td bgcolor="#EDEADE" width="338" height="29">SCSE</td>
+			</tr>
+				
+			</tbody></table>
+				
+		
+				<br><br><font color="#5f6a89" size="2"><b><u>History:</u></b></font><br><br>
+				
+				<table id="hist" style="border-collapse: collapse;" cellspacing="0" cellpadding="2" bordercolor="black" border="1" width="100%">
+				
+				<tbody><tr bgcolor="#5A768D" height="25" align="center">
+					<td width="5%"><font color="white"><b>Sl.No.</b></font></td>
+					<td width="10%"><font color="white"><b>Course Code</b></font></td>
+					<td width="60%"><font color="white"><font color="white"><b>Course Title</b></font></font></td>
+					<td width="20%"><font color="white"><font color="white"><b>Course Type</b></font></font></td>
+					<td width="10%"><font color="white"><b>Credit</b></font></td>
+					<td width="10%"><font color="white"><b>Grade</b></font></td>
+					<td width="10%"><font color="white"><b>Exam Held</b></font></td>
+					<td width="10%"><font color="white"><b>Result Date</b></font></td>
+					<td width="10%"><font color="white"><b>Course Option</b></font></td>
+				</tr>
+				
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">1</td>
+						<td align="center">CHY1001</td>
+						<td>Engineering Chemistry</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2015</td>
+						<td width="80" align="center">23-Dec-2015</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">2</td>
+						<td align="center">CHY1001</td>
+						<td>Engineering Chemistry</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2015</td>
+						<td width="80" align="center">23-Dec-2015</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">3</td>
+						<td align="center">CHY1001</td>
+						<td>Engineering Chemistry</td>
+						<td width="50" align="center">Embedded Lab</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2015</td>
+						<td width="80" align="center">23-Dec-2015</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">4</td>
+						<td align="center">CHY1001</td>
+						<td>Engineering Chemistry</td>
+						<td width="50" align="center">Embedded - Theory, Lab &amp; Project</td>
+						<td align="center">5</td>
+						<td align="center">A</td>
+						<td align="center">Nov-2015</td>
+						<td width="80" align="center">23-Dec-2015</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">5</td>
+						<td align="center">CHY1002</td>
+						<td>Environmental Sciences</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">10-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">6</td>
+						<td align="center">CHY1002</td>
+						<td>Environmental Sciences</td>
+						<td width="50" align="center">Embedded - Theory &amp; Project</td>
+						<td align="center">3</td>
+						<td align="center">S</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">10-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">7</td>
+						<td align="center">CHY1002</td>
+						<td>Environmental Sciences</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">10-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">8</td>
+						<td align="center">CSE1001</td>
+						<td>Problem Solving and Programming</td>
+						<td width="50" align="center">Lab Only</td>
+						<td align="center">3</td>
+						<td align="center">S</td>
+						<td align="center">Nov-2015</td>
+						<td width="80" align="center">23-Dec-2015</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">9</td>
+						<td align="center">CSE1002</td>
+						<td>Problem Solving with Object Oriented Programming</td>
+						<td width="50" align="center">Lab Only</td>
+						<td align="center">3</td>
+						<td align="center">A</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">14-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">10</td>
+						<td align="center">CSE1003</td>
+						<td>Digital Logic and Design</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">10-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">11</td>
+						<td align="center">CSE1003</td>
+						<td>Digital Logic and Design</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">10-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">12</td>
+						<td align="center">CSE1003</td>
+						<td>Digital Logic and Design</td>
+						<td width="50" align="center">Embedded Lab</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">10-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">13</td>
+						<td align="center">CSE1003</td>
+						<td>Digital Logic and Design</td>
+						<td width="50" align="center">Embedded - Theory, Lab &amp; Project</td>
+						<td align="center">4</td>
+						<td align="center">A</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">10-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">14</td>
+						<td align="center">CSE1004</td>
+						<td>Network and Communication</td>
+						<td width="50" align="center">Embedded Lab</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">19-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">15</td>
+						<td align="center">CSE1004</td>
+						<td>Network and Communication</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">19-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">16</td>
+						<td align="center">CSE1004</td>
+						<td>Network and Communication</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">19-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">17</td>
+						<td align="center">CSE1004</td>
+						<td>Network and Communication</td>
+						<td width="50" align="center">Embedded - Theory, Lab &amp; Project</td>
+						<td align="center">4</td>
+						<td align="center">A</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">19-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">18</td>
+						<td align="center">CSE2001</td>
+						<td>Computer Architecture and Organization</td>
+						<td width="50" align="center">Theory Only</td>
+						<td align="center">3</td>
+						<td align="center">A</td>
+						<td align="center">Nov-2016</td>
+						<td width="80" align="center">23-Dec-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">19</td>
+						<td align="center">CSE2002</td>
+						<td>Theory of Computation and Compiler Design</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">19-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">20</td>
+						<td align="center">CSE2002</td>
+						<td>Theory of Computation and Compiler Design</td>
+						<td width="50" align="center">Embedded - Theory &amp; Project</td>
+						<td align="center">4</td>
+						<td align="center">A</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">19-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">21</td>
+						<td align="center">CSE2002</td>
+						<td>Theory of Computation and Compiler Design</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">19-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">22</td>
+						<td align="center">CSE2003</td>
+						<td>Data Structures and Algorithms</td>
+						<td width="50" align="center">Embedded Lab</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">13-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">23</td>
+						<td align="center">CSE2003</td>
+						<td>Data Structures and Algorithms</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">13-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">24</td>
+						<td align="center">CSE2003</td>
+						<td>Data Structures and Algorithms</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">13-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">25</td>
+						<td align="center">CSE2003</td>
+						<td>Data Structures and Algorithms</td>
+						<td width="50" align="center">Embedded - Theory, Lab &amp; Project</td>
+						<td align="center">4</td>
+						<td align="center">A</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">13-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">26</td>
+						<td align="center">CSE2004</td>
+						<td>Database Management Systems</td>
+						<td width="50" align="center">Embedded Lab</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2016</td>
+						<td width="80" align="center">23-Dec-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">27</td>
+						<td align="center">CSE2004</td>
+						<td>Database Management Systems</td>
+						<td width="50" align="center">Embedded - Theory, Lab &amp; Project</td>
+						<td align="center">4</td>
+						<td align="center">S</td>
+						<td align="center">Nov-2016</td>
+						<td width="80" align="center">23-Dec-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">28</td>
+						<td align="center">CSE2004</td>
+						<td>Database Management Systems</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2016</td>
+						<td width="80" align="center">23-Dec-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">29</td>
+						<td align="center">CSE2004</td>
+						<td>Database Management Systems</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2016</td>
+						<td width="80" align="center">23-Dec-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">30</td>
+						<td align="center">CSE2005</td>
+						<td>Operating Systems</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">19-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">31</td>
+						<td align="center">CSE2005</td>
+						<td>Operating Systems</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">19-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">32</td>
+						<td align="center">CSE2005</td>
+						<td>Operating Systems</td>
+						<td width="50" align="center">Embedded Lab</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">19-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">33</td>
+						<td align="center">CSE2005</td>
+						<td>Operating Systems</td>
+						<td width="50" align="center">Embedded - Theory, Lab &amp; Project</td>
+						<td align="center">4</td>
+						<td align="center">S</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">19-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">34</td>
+						<td align="center">CSE2006</td>
+						<td>Microprocessor and Interfacing</td>
+						<td width="50" align="center">Embedded Lab</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">35</td>
+						<td align="center">CSE2006</td>
+						<td>Microprocessor and Interfacing</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">36</td>
+						<td align="center">CSE2006</td>
+						<td>Microprocessor and Interfacing</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">37</td>
+						<td align="center">CSE2006</td>
+						<td>Microprocessor and Interfacing</td>
+						<td width="50" align="center">Embedded - Theory, Lab &amp; Project</td>
+						<td align="center">4</td>
+						<td align="center">A</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">38</td>
+						<td align="center">CSE3001</td>
+						<td>Software Engineering</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2016</td>
+						<td width="80" align="center">26-Dec-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">39</td>
+						<td align="center">CSE3001</td>
+						<td>Software Engineering</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2016</td>
+						<td width="80" align="center">26-Dec-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">40</td>
+						<td align="center">CSE3001</td>
+						<td>Software Engineering</td>
+						<td width="50" align="center">Embedded Lab</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2016</td>
+						<td width="80" align="center">26-Dec-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">41</td>
+						<td align="center">CSE3001</td>
+						<td>Software Engineering</td>
+						<td width="50" align="center">Embedded - Theory, Lab &amp; Project</td>
+						<td align="center">4</td>
+						<td align="center">B</td>
+						<td align="center">Nov-2016</td>
+						<td width="80" align="center">26-Dec-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">42</td>
+						<td align="center">CSE3002</td>
+						<td>Internet and Web Programming</td>
+						<td width="50" align="center">Embedded Lab</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2016</td>
+						<td width="80" align="center">23-Dec-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">43</td>
+						<td align="center">CSE3002</td>
+						<td>Internet and Web Programming</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2016</td>
+						<td width="80" align="center">23-Dec-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">44</td>
+						<td align="center">CSE3002</td>
+						<td>Internet and Web Programming</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2016</td>
+						<td width="80" align="center">23-Dec-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">45</td>
+						<td align="center">CSE3002</td>
+						<td>Internet and Web Programming</td>
+						<td width="50" align="center">Embedded - Theory, Lab &amp; Project</td>
+						<td align="center">4</td>
+						<td align="center">A</td>
+						<td align="center">Nov-2016</td>
+						<td width="80" align="center">23-Dec-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">46</td>
+						<td align="center">CSE3021</td>
+						<td>Data Visualization</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">21-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">47</td>
+						<td align="center">CSE3021</td>
+						<td>Data Visualization</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">21-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">48</td>
+						<td align="center">CSE3021</td>
+						<td>Data Visualization</td>
+						<td width="50" align="center">Embedded - Theory &amp; Project</td>
+						<td align="center">4</td>
+						<td align="center">A</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">21-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">49</td>
+						<td align="center">CSE3024</td>
+						<td>Web Mining</td>
+						<td width="50" align="center">Embedded - Theory &amp; Project</td>
+						<td align="center">4</td>
+						<td align="center">A</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">50</td>
+						<td align="center">CSE3024</td>
+						<td>Web Mining</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">51</td>
+						<td align="center">CSE3024</td>
+						<td>Web Mining</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">52</td>
+						<td align="center">CSE3099</td>
+						<td>Industrial Internship</td>
+						<td width="50" align="center">Project</td>
+						<td align="center">2</td>
+						<td align="center">S</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">10-Jan-2018</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">53</td>
+						<td align="center">CSE4001</td>
+						<td>Parallel and Distributed Computing</td>
+						<td width="50" align="center">Embedded Lab</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">54</td>
+						<td align="center">CSE4001</td>
+						<td>Parallel and Distributed Computing</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">55</td>
+						<td align="center">CSE4001</td>
+						<td>Parallel and Distributed Computing</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">56</td>
+						<td align="center">CSE4001</td>
+						<td>Parallel and Distributed Computing</td>
+						<td width="50" align="center">Embedded - Theory, Lab &amp; Project</td>
+						<td align="center">4</td>
+						<td align="center">B</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">57</td>
+						<td align="center">CSE4003</td>
+						<td>Cyber Security</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">58</td>
+						<td align="center">CSE4003</td>
+						<td>Cyber Security</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">59</td>
+						<td align="center">CSE4003</td>
+						<td>Cyber Security</td>
+						<td width="50" align="center">Embedded - Theory &amp; Project</td>
+						<td align="center">4</td>
+						<td align="center">A</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">60</td>
+						<td align="center">CSE4022</td>
+						<td>Natural Language Processing</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">61</td>
+						<td align="center">CSE4022</td>
+						<td>Natural Language Processing</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">62</td>
+						<td align="center">CSE4022</td>
+						<td>Natural Language Processing</td>
+						<td width="50" align="center">Embedded - Theory &amp; Project</td>
+						<td align="center">4</td>
+						<td align="center">A</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">63</td>
+						<td align="center">EEE1001</td>
+						<td>Basic Electrical and Electronics Engineering</td>
+						<td width="50" align="center">Embedded Lab</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2015</td>
+						<td width="80" align="center">23-Dec-2015</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">64</td>
+						<td align="center">EEE1001</td>
+						<td>Basic Electrical and Electronics Engineering</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2015</td>
+						<td width="80" align="center">23-Dec-2015</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">65</td>
+						<td align="center">EEE1001</td>
+						<td>Basic Electrical and Electronics Engineering</td>
+						<td width="50" align="center">Embedded - Theory &amp; Lab</td>
+						<td align="center">3</td>
+						<td align="center">B</td>
+						<td align="center">Nov-2015</td>
+						<td width="80" align="center">23-Dec-2015</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">66</td>
+						<td align="center">ENG1011</td>
+						<td>English for Engineers</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2015</td>
+						<td width="80" align="center">23-Dec-2015</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">67</td>
+						<td align="center">ENG1011</td>
+						<td>English for Engineers</td>
+						<td width="50" align="center">Embedded Lab</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2015</td>
+						<td width="80" align="center">23-Dec-2015</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">68</td>
+						<td align="center">ENG1011</td>
+						<td>English for Engineers</td>
+						<td width="50" align="center">Embedded - Theory &amp; Lab</td>
+						<td align="center">2</td>
+						<td align="center">B</td>
+						<td align="center">Nov-2015</td>
+						<td width="80" align="center">23-Dec-2015</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">69</td>
+						<td align="center">EXC1009</td>
+						<td>Debate Society</td>
+						<td width="50" align="center">Lab Only</td>
+						<td align="center">2</td>
+						<td align="center">P</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">14-Jul-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">70</td>
+						<td align="center">GER1001</td>
+						<td>Basic German</td>
+						<td width="50" align="center">Theory Only</td>
+						<td align="center">2</td>
+						<td align="center">B</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">10-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">71</td>
+						<td align="center">HUM1021</td>
+						<td>Ethics and Values</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">10-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">72</td>
+						<td align="center">HUM1021</td>
+						<td>Ethics and Values</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">10-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">73</td>
+						<td align="center">HUM1021</td>
+						<td>Ethics and Values</td>
+						<td width="50" align="center">Embedded - Theory &amp; Project</td>
+						<td align="center">2</td>
+						<td align="center">S</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">10-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">74</td>
+						<td align="center">HUM1022</td>
+						<td>Psychology in Everyday Life</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">75</td>
+						<td align="center">HUM1022</td>
+						<td>Psychology in Everyday Life</td>
+						<td width="50" align="center">Embedded - Theory &amp; Project</td>
+						<td align="center">3</td>
+						<td align="center">B</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">76</td>
+						<td align="center">HUM1022</td>
+						<td>Psychology in Everyday Life</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">20-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">77</td>
+						<td align="center">MAT1011</td>
+						<td>Calculus for Engineers</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2015</td>
+						<td width="80" align="center">23-Dec-2015</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">78</td>
+						<td align="center">MAT1011</td>
+						<td>Calculus for Engineers</td>
+						<td width="50" align="center">Embedded Lab</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2015</td>
+						<td width="80" align="center">23-Dec-2015</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">79</td>
+						<td align="center">MAT1011</td>
+						<td>Calculus for Engineers</td>
+						<td width="50" align="center">Embedded - Theory &amp; Lab</td>
+						<td align="center">4</td>
+						<td align="center">B</td>
+						<td align="center">Nov-2015</td>
+						<td width="80" align="center">23-Dec-2015</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">80</td>
+						<td align="center">MAT1014</td>
+						<td>Discrete Mathematics and Graph Theory</td>
+						<td width="50" align="center">Theory Only</td>
+						<td align="center">4</td>
+						<td align="center">A</td>
+						<td align="center">Nov-2016</td>
+						<td width="80" align="center">23-Dec-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">81</td>
+						<td align="center">MAT2001</td>
+						<td>Statistics for Engineers</td>
+						<td width="50" align="center">Embedded Lab</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">10-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">82</td>
+						<td align="center">MAT2001</td>
+						<td>Statistics for Engineers</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">10-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">83</td>
+						<td align="center">MAT2001</td>
+						<td>Statistics for Engineers</td>
+						<td width="50" align="center">Embedded - Theory &amp; Lab</td>
+						<td align="center">4</td>
+						<td align="center">B</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">10-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">84</td>
+						<td align="center">MAT2002</td>
+						<td>Applications of Differential and Difference Equations</td>
+						<td width="50" align="center">Embedded Lab</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">10-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">85</td>
+						<td align="center">MAT2002</td>
+						<td>Applications of Differential and Difference Equations</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">10-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">86</td>
+						<td align="center">MAT2002</td>
+						<td>Applications of Differential and Difference Equations</td>
+						<td width="50" align="center">Embedded - Theory &amp; Lab</td>
+						<td align="center">4</td>
+						<td align="center">B</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">10-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">87</td>
+						<td align="center">MAT3004</td>
+						<td>Applied Linear Algebra</td>
+						<td width="50" align="center">Theory Only</td>
+						<td align="center">4</td>
+						<td align="center">B</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">19-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">88</td>
+						<td align="center">MGT1022</td>
+						<td>Lean Start-up Management</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">19-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">89</td>
+						<td align="center">MGT1022</td>
+						<td>Lean Start-up Management</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">19-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">90</td>
+						<td align="center">MGT1022</td>
+						<td>Lean Start-up Management</td>
+						<td width="50" align="center">Embedded - Theory &amp; Project</td>
+						<td align="center">2</td>
+						<td align="center">S</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">19-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">91</td>
+						<td align="center">MGT1027</td>
+						<td>Product Design, Management Techniques and Entrepreneurship</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2016</td>
+						<td width="80" align="center">23-Dec-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">92</td>
+						<td align="center">MGT1027</td>
+						<td>Product Design, Management Techniques and Entrepreneurship</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2016</td>
+						<td width="80" align="center">23-Dec-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">93</td>
+						<td align="center">MGT1027</td>
+						<td>Product Design, Management Techniques and Entrepreneurship</td>
+						<td width="50" align="center">Embedded - Theory &amp; Project</td>
+						<td align="center">4</td>
+						<td align="center">A</td>
+						<td align="center">Nov-2016</td>
+						<td width="80" align="center">23-Dec-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">94</td>
+						<td align="center">PHY1001</td>
+						<td>Engineering Physics</td>
+						<td width="50" align="center">Embedded Lab</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2015</td>
+						<td width="80" align="center">23-Dec-2015</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">95</td>
+						<td align="center">PHY1001</td>
+						<td>Engineering Physics</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2015</td>
+						<td width="80" align="center">23-Dec-2015</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">96</td>
+						<td align="center">PHY1001</td>
+						<td>Engineering Physics</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">Nov-2015</td>
+						<td width="80" align="center">23-Dec-2015</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">97</td>
+						<td align="center">PHY1001</td>
+						<td>Engineering Physics</td>
+						<td width="50" align="center">Embedded - Theory, Lab &amp; Project</td>
+						<td align="center">5</td>
+						<td align="center">A</td>
+						<td align="center">Nov-2015</td>
+						<td width="80" align="center">23-Dec-2015</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">98</td>
+						<td align="center">PHY1999</td>
+						<td>Introduction to Innovative Projects</td>
+						<td width="50" align="center">Embedded Project</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">08-Jul-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">99</td>
+						<td align="center">PHY1999</td>
+						<td>Introduction to Innovative Projects</td>
+						<td width="50" align="center">Embedded Theory</td>
+						<td align="center"></td>
+						<td align="center">-</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">08-Jul-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">100</td>
+						<td align="center">PHY1999</td>
+						<td>Introduction to Innovative Projects</td>
+						<td width="50" align="center">Embedded - Theory &amp; Project</td>
+						<td align="center">2</td>
+						<td align="center">A</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">08-Jul-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">101</td>
+						<td align="center">STS1001</td>
+						<td>Soft Skills</td>
+						<td width="50" align="center">Soft Skill</td>
+						<td align="center">1</td>
+						<td align="center">B</td>
+						<td align="center">May-2016</td>
+						<td width="80" align="center">28-Jun-2016</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">102</td>
+						<td align="center">STS2001</td>
+						<td>Soft Skills</td>
+						<td width="50" align="center">Soft Skill</td>
+						<td align="center">1</td>
+						<td align="center">B</td>
+						<td align="center">Nov-2016</td>
+						<td width="80" align="center">03-Jan-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">103</td>
+						<td align="center">STS2002</td>
+						<td>Soft Skills</td>
+						<td width="50" align="center">Soft Skill</td>
+						<td align="center">1</td>
+						<td align="center">B</td>
+						<td align="center">May-2017</td>
+						<td width="80" align="center">14-Jun-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+					<tr bgcolor="#EDEADE" height="20">
+						<td width="30" align="center">104</td>
+						<td align="center">STS3001</td>
+						<td>Soft Skills</td>
+						<td width="50" align="center">Soft Skill</td>
+						<td align="center">1</td>
+						<td align="center">A</td>
+						<td align="center">Nov-2017</td>
+						<td width="80" align="center">28-Dec-2017</td>												
+						<td align="center">NIL</td>
+					</tr>
+		
+				</tbody></table>
+				<br>
+				<table style="border-collapse: collapse;" cellspacing="0" cellpadding="2" bordercolor="black" border="1" width="750">
+				
+				<tbody><tr bgcolor="#5A768D" height="25" align="center">
+					<td align="center"><font color="white"><b>Credits Registered</b></font></td>
+					<td align="center"><font color="white"><b>Credits Earned</b></font></td>
+					<td align="center"><font color="white"><font color="white"><b>CGPA</b></font></font></td>
+		
+				</tr>
+				<tr bgcolor="#EDEADE" height="20">
+		<td align="center">126</td><td align="center">126</td><td align="center">  8.86</td>
+				</tr>
+				</tbody></table>
+						
+						<br>				
+						<table style="border-collapse: collapse;" cellspacing="0" cellpadding="2" bordercolor="black" border="1" width="750">
+							<tbody><tr bgcolor="#5A768D" height="25" align="center">
+								<td align="center"><font color="white">No. of <br>S Grades</font></td>
+								<td align="center"><font color="white">No. of <br>A Grades</font></td>
+								<td align="center"><font color="white">No. of <br>B Grades</font></td>
+								<td align="center"><font color="white">No. of <br>C Grades</font></td>
+								<td align="center"><font color="white">No. of <br>D Grades</font></td>					
+								<td align="center"><font color="white">No. of <br>E Grades</font></td>					
+								<td align="center"><font color="white">No. of <br>F Grades / Arrears</font></td>					
+								<td align="center"><font color="white">No. of <br>N Grades</font></td>					
+							</tr>
+							<tr bgcolor="#EDEADE" height="20">
+							 
+								<td align="center">7</td>
+								<td align="center">18</td>
+								<td align="center">13</td>
+								<td align="center">0</td>
+								<td align="center">0</td>
+								<td align="center">0</td>				
+								<td align="center">0</td>				
+								<td align="center">0</td></tr>												
+							
+							
+						</tbody></table>				
+
+		
+		<br><br>		
+		</b></td>
+  </tr>
+</tbody></table>
+<center><input class="submit3" value="Download as .doc" onclick="call_print();" type="button"></center><script language="javascript">var arr=[];</script>
+<script>
+var start=0;
+var table = document.getElementById("hist");
+for(i=0;i<arr.length;i++)
+{
+	for (j=start;j<table.rows.length;j++)
+	{
+		if (table.rows[j].cells[1].innerHTML==arr[i][0])
+		{
+			if (table.rows[j].cells[5].innerHTML==arr[i][1] && table.rows[j].cells[5].innerHTML=='N')
+			{
+				table.rows[j].cells[5].style.backgroundColor='Yellow';
+				start=j+1;
+				break;
+			}
+			else if (table.rows[j].cells[5].innerHTML==arr[i][1] && table.rows[j].cells[5].innerHTML=='F')
+			{
+				table.rows[j].cells[5].style.backgroundColor='Cyan';
+				start=j+1;
+				break;
+			}
+			
+		}
+	}
+}		
+</script>
+
+
+</body></html>
