@@ -49,6 +49,15 @@ def display(quote):
     print ("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     print ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
 
+def gpaCalc(credits,grades):
+    totalCredits = sum(credits)
+    totalPoints = 0
+    for subject in range(len(credits)):
+        totalPoints = totalPoints + (credits[subject]*grades[subject])
+    GPA = totalPoints/totalCredits
+    print(">>> Total Credits Completed - %s" %(totalCredits))
+    print(">>> Cumulative GPA - %s" %(GPA))
+
 # try:
 flag = 1
 while(flag):
@@ -96,7 +105,13 @@ while(flag):
         School = infoStudent[3].text
 
         # Showing Student details
-        
+        display(2)
+        print(">>> Student Details - ")
+        print("\t>>> Reg. No. : %s" %(Regno))
+        print("\t>>> Name     : %s" %(Name))
+        print("\t>>> Branch   : %s" %(Branch))
+        print("\t>>> School   : %s" %(School))
+
         # Using BeautifulSoup to parse Grades data.
         gradesTable = soup.find("table",{"id":"hist"})
         infoGrades = gradesTable.find_all("tr",{"bgcolor":"#EDEADE"})
@@ -118,20 +133,47 @@ while(flag):
         worksheet.write('H1', 'Result Date', bold)
 
         rows = 1
+        credits, grades = [],[]
+        useless = ['A','B','C','D','E','F','N']
+        gradeKey = {'S':10,'A':9,'B':8,'C':7,'D':6,'E':5,'F':0,'N':0}
         for subject in range(len(infoGrades)):
             gradeRow = infoGrades[subject]
             gradeData = gradeRow.find_all("td")
 
             # Putting data in Worksheet.
-            if(gradeData[5].text != '-'):
+            if((gradeData[5].text) in useless):
+                credits.append(gradeData[4].text)
+                grades.append(gradeKey[gradeData[5].text])
+                # Writing to worksheet
                 worksheet.write(rows, 0, rows)
                 for i in range(1,8):
                     worksheet.write(rows, i, gradeData[i].text)
             else:
                 continue;
-
         flag = 0
         workbook.close()
+        print("\n>>> Academic Transcript stored in folder as xlsx file.")
+
+        temp = 1
+        while(temp):
+            choice = input("\n>>> Do you want to add more courses and grades for speculation? (Y or N) : ")
+            if (choice == 'Y' or choice == 'y'):
+                display(2)
+                Addition = int(input("How many courses you want to input?"))
+                print
+                temp = 0
+            elif (choice == 'N' or choice == 'n'):
+                gpaCalc(credits,grades)
+                temp = 0
+            else:
+                print("!>!>!> Please select a valid input (Y or N). Try Again - ")
+                time.sleep(3)
+                display(2)
+                print(">>> Student Details - ")
+                print("\t>>> Reg. No. : %s" %(Regno))
+                print("\t>>> Name     : %s" %(Name))
+                print("\t>>> Branch   : %s" %(Branch))
+                print("\t>>> School   : %s" %(School))
 
 logs.close()
 
@@ -139,11 +181,14 @@ logs.close()
 #     print("    >!>!> Exceptioncaught - Most Probably Network error.")
 #     print("          Try Again\n")
 #     logs.write(" Outer Exception error.\n\n")
+#     workbook.close()
+#     logs.close()
 #     pass
 #
 # except KeyboardInterrupt:
 #     print("\n\n>>> Interrupt received! Exiting cleanly...")
 #     logs.write("End of logs - Abruptly Ended")
+#     workbook.close()
 #     logs.close()
 #     sys.exit()
 ############################### END OF SCRIPT :) ##############################
