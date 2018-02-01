@@ -13,6 +13,7 @@ from pyfiglet import Figlet
 import urllib.request
 import xlsxwriter
 import time
+import math
 import sys
 import os
 
@@ -49,14 +50,18 @@ def display(quote):
     print ("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     print ("<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<\n")
 
-def gpaCalc(credits,grades):
+def gpaCalc(credits,grades,CSEcredits,CSEgrades):
     totalCredits = sum(credits)
-    totalPoints = 0
+    totalCSECredits = sum(CSEcredits)
+    totalPoints, totalCSEPoints = 0,0
     for subject in range(len(credits)):
         totalPoints = totalPoints + (credits[subject]*grades[subject])
-    GPA = totalPoints/totalCredits
-    print(">>> Total Credits Completed - %s" %(totalCredits))
-    print(">>> Cumulative GPA - %s" %(GPA))
+    for subject in range(len(CSEcredits)):
+        totalCSEPoints = totalCSEPoints + (CSEcredits[subject]*CSEgrades[subject])
+    GPA = round((math.floor((totalPoints/totalCredits)*100))/100,2)
+    MajorGPA = round((math.floor((totalCSEPoints/totalCSECredits)*100))/100,2)
+    time.sleep(2)
+    return totalCredits, GPA, totalCSECredits, MajorGPA
 
 # try:
 flag = 1
@@ -106,6 +111,7 @@ while(flag):
 
         # Showing Student details
         display(2)
+        time.sleep(1)
         print(">>> Student Details - ")
         print("\t>>> Reg. No. : %s" %(Regno))
         print("\t>>> Name     : %s" %(Name))
@@ -133,8 +139,8 @@ while(flag):
         worksheet.write('H1', 'Result Date', bold)
 
         rows = 1
-        credits, grades = [],[]
-        useless = ['A','B','C','D','E','F','N']
+        credits, grades, CSEcredits, CSEgrades = [],[],[],[]
+        useless = ['S','A','B','C','D','E','F','N']
         gradeKey = {'S':10,'A':9,'B':8,'C':7,'D':6,'E':5,'F':0,'N':0}
         for subject in range(len(infoGrades)):
             gradeRow = infoGrades[subject]
@@ -142,7 +148,10 @@ while(flag):
 
             # Putting data in Worksheet.
             if((gradeData[5].text) in useless):
-                credits.append(gradeData[4].text)
+                if ('CSE' in gradeData[1].text):
+                    CSEcredits.append(int(gradeData[4].text))
+                    CSEgrades.append(gradeKey[gradeData[5].text])
+                credits.append(int(gradeData[4].text))
                 grades.append(gradeKey[gradeData[5].text])
                 # Writing to worksheet
                 worksheet.write(rows, 0, rows)
@@ -152,23 +161,51 @@ while(flag):
                 continue;
         flag = 0
         workbook.close()
+        time.sleep(1)
         print("\n>>> Academic Transcript stored in folder as xlsx file.")
 
         temp = 1
         while(temp):
+            time.sleep(1)
             choice = input("\n>>> Do you want to add more courses and grades for speculation? (Y or N) : ")
             if (choice == 'Y' or choice == 'y'):
                 display(2)
-                Addition = int(input("How many courses you want to input?"))
-                print
-                temp = 0
+                Addition = int(input("\n>>>How many courses you want to input? : "))
+                print(">>> \nPlease enter data in following form - (credits grade subject)")
+                print(">>> For example - (4 S CSE)\n")
+                print(">>> Start - ")
+
+                for new in range(Addition):
+                    tempCredits,tempGrade,Subject = map(str,sys.stdin.readline().split())
+                    if (Subject == 'CSE'):
+                        CSEcredits.append(int(tempCredits))
+                        CSEgrades.append(gradeKey[tempGrade])
+
+                    credits.append(int(tempCredits))
+                    grades.append(gradeKey[tempGrade])
+                    totalCredits, GPA, totalCSECredits, MajorGPA = gpaCalc(credits,grades,CSEcredits,CSEgrades)
+                    display(2)
+                    print("\n\t>>> Total (Speculated) Credits Completed - %s" %(totalCredits))
+                    print("\t>>> Cumulative (Speculated) GPA - %s\n" %(GPA))
+                    print("\t>>> Total (Speculated) CSE Credits Completed - %s" %(totalCSECredits))
+                    print("\t>>> Major (Speculated) GPA - %s\n" %(MajorGPA))
+                    time.sleep(5)
+                    temp = 0
+
             elif (choice == 'N' or choice == 'n'):
-                gpaCalc(credits,grades)
+                totalCredits, GPA, totalCSECredits, MajorGPA = gpaCalc(credits,grades,CSEcredits,CSEgrades)
+                print("\n\t>>> Total Credits Completed - %s" %(totalCredits))
+                print("\t>>> Cumulative GPA - %s\n" %(GPA))
+                print("\t>>> Total CSE Credits Completed - %s" %(totalCSECredits))
+                print("\t>>> Major GPA - %s\n" %(MajorGPA))
+                time.sleep(5)
                 temp = 0
+
             else:
                 print("!>!>!> Please select a valid input (Y or N). Try Again - ")
                 time.sleep(3)
                 display(2)
+                time.sleep(1)
                 print(">>> Student Details - ")
                 print("\t>>> Reg. No. : %s" %(Regno))
                 print("\t>>> Name     : %s" %(Name))
