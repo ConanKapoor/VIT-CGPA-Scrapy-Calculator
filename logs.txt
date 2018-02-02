@@ -1,3 +1,0 @@
-The following errors were encountered during scraping ->
-
-End of logs - Abruptly Ended
